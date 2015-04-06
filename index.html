@@ -3,8 +3,501 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="css.css"/>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.9.2.custom.css"/>
+    <script src="js/jquery.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="js/jquery.bxslider.min.js"  ></script>
+    <script src="js/script.js"></script>
+
+    <link rel="stylesheet" href="jquery.bxslider.css"/>
+
+    <script>
+        function somefunc(a,b,c){
+            requiredname(b);
+            checkEmail(a);
+            vrequiredtepass(c);
+            
+        }
+        function vrequiredtepass(a){
+            var pass=a.val().length;
+            if(pass<6){
+                a.css('border','1px solid red');
+                $('.incorectpass').show();
+                $('.validatepass').click(function(){
+                    $('.incorectpass').hide();
+                });            }
+            else{
+                a.css('border','1px solid green');
+            }
+        }
+        function requiredname(a){
+
+            var name=a.val().length;
+            if(name<1){
+                a.css('border','1px solid red');
+                $('.incorectname').show();
+
+                $('.required-entry').click(function(){
+                    $('.incorectname').hide();
+                });
+            }
+            else{
+                a.css('border','1px solid green');
+            }
+        }
+        function checkEmail(a) {
+
+            var email=a.val();
+            var filter = /[\w-]+@([\w-]+\.)+[\w-]+/;
+
+            if (!filter.test(email)) {
+                a.css('border','1px solid red');
+                $('.incorectemail').show();
+                $('.validate-email').click(function(){
+                    $('.incorectemail').hide();
+                });
+                return false;
+            }
+            else{
+                a.css('border','1px solid green');
+            }
+        }
+
+    </script>
 </head>
 <body>
-sfasdgdazg
+<div class="wrapper">
+    <div class="header">
+        <div class="top">
+             <ul class="top-menu left">
+                 <li class="menu"><a href="javascript:void(0)"><img src="images/menu_icon.png" alt=""/></a></li>
+                 <li><a href="javascript:void(0)">Home</a></li>
+                 <li><a href="javascript:void(0)">Store</a></li>
+                 <li><a href="javascript:void(0)">Blog</a></li>
+                 <li><a href="javascript:void(0)">About</a></li>
+                 <li><a href="javascript:void(0)">Contact</a></li>
+            </ul>
+            <ul class="top-menu right">
+                <li><a href="javascript:void(0)"><img src="images/search_menu_icon.png" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="images/f_menu_icon.png" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="images/t_menu_icon.png" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="images/g+_menu_icon.png" alt=""/></a></li>
+                <li id="loginclick"><a href="javascript:void(0)"><img src="images/login_menu_icon.png" alt=""/></a>
+                    <div class="loginblock">
+                        <form action="1" method="post">
+                            <h1>Login</h1>
+                            <p class="incorectname" id="name1">це поле не поввинно бути пустим</p>
+                            <input type='text' class='required-entry' id="loginname" placeholder="Your name"/>
+                            <p class="incorectemail" id="emeil1">введіть емейл на зразок (example121@company.dot)</p>
+                            <input type='text' class='validate-email' id="loginemail" placeholder="Your email"/>
+                            <p class="incorectpass" id="pass1">пароль аовинен бути більше 6 символів</p>
+                            <input type="password" class="validatepass" placeholder="password"/>
+                            <button type="button" id="loginbutton" onclick="somefunc($('#loginemail'),$('#loginname'),$('.validatepass'))">Submit</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown-menu">
+            <div class="left-menu">
+                <ul class="side-menu">
+                    <li><a href="javascript:void(0)"><div id="logo1"></div><p>Home</p></a>
+                        <div class="dropdown-inside">
+                        <ul class="hover-menu">
+                            <li><a href="javascript:void(0)"><p class="title-color">Teach</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                            <li><a href="javascript:void(0)"><p>Software&Apps</p></a></li>
+                            <li><a href="javascript:void(0)"><p>Gadgets</p></a></li>
+                            <li><a href="javascript:void(0)"><p>Mobile</p></a></li>
+                        </ul>
+                        <ul class="hover-menu hover1">
+                            <li><a href="javascript:void(0)"><p class="title-color">Entertaiment</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                            <li><a href="javascript:void(0)"><p>Film</p></a></li>
+                            <li><a href="javascript:void(0)"><p>Gaming</p></a></li>
+                            <li><a href="javascript:void(0)"><p>Music</p></a></li>
+                            <li><a href="javascript:void(0)"><p>Sport</p></a></li>
+                        </ul>
+                        <ul class="hover-menu hover2">
+                            <li><a href="javascript:void(0)"><p class="title-color">Busines</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                            <li><a href="javascript:void(0)"><p>Jobs</p></a></li>
+                            <li><a href="javascript:void(0)"><p>Marketing</p></a></li>
+                            <li><a href="javascript:void(0)"><p>Media</p></a></li>
+                        </ul>
+                        <ul class="hover-menu hover3">
+                            <li><a href="javascript:void(0)"><p class="title-color">Lifestyle</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                            <li><a href="javascript:void(0)"><p>Home</p></a></li>
+                            <li><a href="javascript:void(0)"><p>Health&Fitmess</p></a></li>
+                            <li><a href="javascript:void(0)"><p>Travel&Leisure</p></a></li>
+                        </ul>
+                        </div>
+                    </li>
+
+                    <li><a href="javascript:void(0)"><div id="logo2"></div><p>Store</p></a>
+                        <div class="dropdown-inside" id="dropdown1">
+                            <ul class="hover-menu">
+                                <li><a href="javascript:void(0)"><p class="title-color">Teach</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Software&Apps</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gadgets</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Mobile</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover1">
+                                <li><a href="javascript:void(0)"><p class="title-color">Entertaiment</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Film</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gaming</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Music</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Sport</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover2">
+                                <li><a href="javascript:void(0)"><p class="title-color">Busines</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Jobs</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Marketing</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Media</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover3">
+                                <li><a href="javascript:void(0)"><p class="title-color">Lifestyle</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Home</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Health&Fitmess</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Travel&Leisure</p></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0)"><div id="logo3"></div><p>Blog</p></a>
+                        <div class="dropdown-inside" id="dropdown2">
+                            <ul class="hover-menu">
+                                <li><a href="javascript:void(0)"><p class="title-color">Teach</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Software&Apps</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gadgets</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Mobile</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover1">
+                                <li><a href="javascript:void(0)"><p class="title-color">Entertaiment</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Film</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gaming</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Music</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Sport</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover2">
+                                <li><a href="javascript:void(0)"><p class="title-color">Busines</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Jobs</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Marketing</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Media</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover3">
+                                <li><a href="javascript:void(0)"><p class="title-color">Lifestyle</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Home</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Health&Fitmess</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Travel&Leisure</p></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0)"><div id="logo4"></div><p>Community</p></a>
+                        <div class="dropdown-inside" id="dropdown3">
+                            <ul class="hover-menu">
+                                <li><a href="javascript:void(0)"><p class="title-color">Teach</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Software&Apps</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gadgets</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Mobile</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover1">
+                                <li><a href="javascript:void(0)"><p class="title-color">Entertaiment</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Film</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gaming</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Music</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Sport</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover2">
+                                <li><a href="javascript:void(0)"><p class="title-color">Busines</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Jobs</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Marketing</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Media</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover3">
+                                <li><a href="javascript:void(0)"><p class="title-color">Lifestyle</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Home</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Health&Fitmess</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Travel&Leisure</p></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0)"><div id="logo5"></div><p>Contests</p></a>
+                        <div class="dropdown-inside" id="dropdown4">
+                            <ul class="hover-menu">
+                                <li><a href="javascript:void(0)"><p class="title-color">Teach</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Software&Apps</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gadgets</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Mobile</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover1">
+                                <li><a href="javascript:void(0)"><p class="title-color">Entertaiment</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Film</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gaming</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Music</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Sport</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover2">
+                                <li><a href="javascript:void(0)"><p class="title-color">Busines</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Jobs</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Marketing</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Media</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover3">
+                                <li><a href="javascript:void(0)"><p class="title-color">Lifestyle</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Home</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Health&Fitmess</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Travel&Leisure</p></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0)"><div id="logo6"></div><p>About</p></a>
+                        <div class="dropdown-inside" id="dropdown5">
+                            <ul class="hover-menu">
+                                <li><a href="javascript:void(0)"><p class="title-color">Teach</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Software&Apps</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gadgets</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Mobile</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover1">
+                                <li><a href="javascript:void(0)"><p class="title-color">Entertaiment</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Film</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gaming</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Music</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Sport</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover2">
+                                <li><a href="javascript:void(0)"><p class="title-color">Busines</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Jobs</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Marketing</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Media</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover3">
+                                <li><a href="javascript:void(0)"><p class="title-color">Lifestyle</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Home</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Health&Fitmess</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Travel&Leisure</p></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0)"><div id="logo7"></div><p>Contact</p></a>
+                        <div class="dropdown-inside" id="dropdown6">
+                            <ul class="hover-menu">
+                                <li><a href="javascript:void(0)"><p class="title-color">Teach</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Software&Apps</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gadgets</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Mobile</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover1">
+                                <li><a href="javascript:void(0)"><p class="title-color">Entertaiment</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Film</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Gaming</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Music</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Sport</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover2">
+                                <li><a href="javascript:void(0)"><p class="title-color">Busines</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Jobs</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Marketing</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Media</p></a></li>
+                            </ul>
+                            <ul class="hover-menu hover3">
+                                <li><a href="javascript:void(0)"><p class="title-color">Lifestyle</p><img src="images/arrow.png" alt="" class="imgmenu"/></a></li>
+                                <li><a href="javascript:void(0)"><p>Home</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Health&Fitmess</p></a></li>
+                                <li><a href="javascript:void(0)"><p>Travel&Leisure</p></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="contact">
+                    <div class="telephone">
+                        <div class="left">
+                            <img src="images/phone_icon.png" alt=""/>
+                        </div>
+                        <div class="right">
+                            <p>(912) 555-1234</p>
+                            <p>(912) 555-5678</p>
+                        </div>
+                    </div>
+                    <div class="adress">
+                        <div class="left">
+                            <img src="images/pointer_icon.png" alt=""/>
+                        </div>
+                        <div class="right">
+                            <p>1600 Pensylvania Ave NW, Washington DC20500,USA</p>
+
+                        </div>
+                    </div>
+                    <div class="emeil-contact">
+                        <div class="left">
+                            <img src="images/email_icon_selected.png" alt=""/>
+                        </div>
+                        <div class="right">
+                            <p>Hello@website.com</p>
+                            <p>office@website.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-menu">
+                <div class="rss">
+                    <div class="social">
+                        <div class="facebook-logo"></div>
+                        <div class="s-text f-text"><p>Facebook</p></div>
+                    </div>
+                    <div class="social">
+                        <div class="twitter-logo"></div>
+                        <div class="s-text t-text"><p>Twitter</p></div>
+                    </div>
+                    <div class="social">
+                        <div class="google-logo"></div>
+                        <div class="s-text g-text"><p>Google +</p></div>
+                    </div>
+                    <div class="social">
+                        <div class="feeds-logo"></div>
+                        <div class="s-text rss-text"><p>RSS Feeds</p></div>
+                    </div>
+                    <div class="social">
+                        <div class="pinterest-logo"></div>
+                        <div class="s-text p-text"><p>Pinterest</p></div>
+                    </div>
+                </div>
+                <div class="fsocial fbg">
+                    <img src="images/facebook_icon_big.png" alt=""/><br/>
+                    <p class="left">156k</p> <p class="left follow">Following</p> <img src="images/f_follow.png" alt="" class="right fimg"/>
+                </div>
+                <div class="fsocial tsocial">
+                    <img src="images/twitter_icon_big.png" alt=""/><br/>
+                    <p class="left">156k</p> <p class="left follow">Following</p> <img src="images/t_follow.png" alt="" class="right fimg"/>
+                </div>
+                <div class="sign-in">
+                    <h3>Sign in</h3>
+                    <p>Just select you favorite social network to get started</p>
+                    <div class="soclogo">
+                        <img src="images/f_icon.png" alt=""/>
+                        <img src="images/g_icon.png" alt=""/>
+                        <img src="images/i_icon.png" alt=""/>
+                        <img src="images/t_icon.png" alt=""/>
+                    </div>
+                </div>
+                <div class="sign-me">
+                    <h3>Join the Newsletter</h3>
+                    <p>Sign up for our personalized daily newsletter</p>
+                    <form action="#" method="post">
+                        <p class="incorectemail" id="emeil2">введіть емейл на зразок (example121@company.dot)</p>
+                        <input type='text' class='validate-email' id="Signupemail" placeholder="Your email"/>
+                        <button type="button" id="signupbutton" onclick="checkEmail($('#Signupemail'))">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="content">
+        <div class="slider">
+            <ul class="bxslider">
+                <li><img src="images/Animals_Cats__001795_1.jpg" /></li>
+                <li><img src="images/kartinki-domashnih-jivotnyih4.jpg" /></li>
+                <li><img src="images/skzh-44-03.jpg" /></li>
+            </ul>
+            <div class="slider-text">
+              <h1>  Featured Story</h1>
+                <p>Now that the holiday gift-giving time is over, were <br/> sure many of our readers unwrapped some new consoles.
+                    <br/> Despite its long life  on the market</p>
+            </div>
+        </div>
+        <div class="contect-text">
+            <h1 class="cutTitle">Best story u have ever heard</h1>
+            <p class="cutdata">24 min ago</p>
+            <p class="cuttext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <a href="javascript:void(0)" class="click">read more</a>
+
+        </div>
+        <div class="video"><iframe width="793" height="350" src="https://www.youtube.com/embed/1G4isv_Fylg?list=RDHCMa780rRQ0I4" frameborder="0" allowfullscreen></iframe></div>
+        <div class="leftvideo">
+            <div class="like"><img src="images/heart.png" alt=""/><p>Like</p></div>
+            <div class="latter"><img src="images/clock.png" alt=""/><p>Later</p></div>
+            <div class="share"><img src="images/share.png" alt=""/><p>Share</p></div>
+        </div>
+
+        <div class="Share-like">
+            <div class="share1"><img src="images/share.png" alt=""/><p>1,325</p></div>
+            <div class="like1"><div class="heart"></div> <p>682</p></div>
+
+        </div>
+        <div class="contect-text1">
+            <h1 class="cutTitle1">Text</h1>
+            <p class="cutdata1">35 min ago</p>
+            <p class="cuttext1">ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <a href="javascript:void(0)" class="click1">read more</a>
+
+        </div>
+        <div class="gray"></div>
+
+        <div id="popupWrapper">
+            <div class="content">
+                <a href="javascript:void(0)" id="closeMe">X</a>
+                <p class="popupTitle"></p>
+                <p class="popupdata"></p>
+                <p class="fulltext"></p>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="twitterpost">
+            <h1>Alex White  @alexwhite </h1>
+            <ul>
+                <li>
+                    <p>Singolo is a free PSD template  of a flat, single page website created by @alexwhite</p>
+                    <h2>2 hours ago</h2>
+
+                </li>
+                <li>
+                    <p>Saturday Career Workshops  are back at ADC! See what high  school students created this week</p>
+                    <h2>6 hours ago</h2>
+                </li>
+            </ul>
+        </div>
+        <div id="datepicker"></div>
+        <div class="stories">VIEW <br/> MORE <br/> STORIES <br/><img src="images/arrow.png" alt=""/></div>
+        <div class="gray1"></div>
+        <div class="contect-text2">
+            <h1 class="cutTitle2">1Best story u have ever heard</h1>
+            <p class="cutdata2">124 min ago</p>
+            <p class="cuttext2">1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <a href="javascript:void(0)" class="click2">read more</a>
+
+        </div>
+        <div class="leftslider">
+            <ul class="bxslider1">
+                <li><img src="images/Animals_Cats__001795_1.jpg" /></li>
+                <li><img src="images/kartinki-domashnih-jivotnyih4.jpg" /></li>
+                <li><img src="images/skzh-44-03.jpg" /></li>
+            </ul>
+        </div>
+        <div class="poem"><blockquote>"Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сам всё дадут! "</blockquote></div>
+    </div>
+    <div class="Ask"><h1>Ask a question</h1>
+        <form action="1" method="post">
+            <p class="incorectname" id="name3">це поле не повинно бути путим</p>
+            <input type='text' class='required-entry' id="Askname" placeholder="Your name"/>
+            <p class="incorectemail" id="emeil3">введіть емейл на зразок (example121@company.dot)</p>
+            <input type='text' class='validate-email' id="Askemail" placeholder="Your email"/>
+            <button type="button" id="Askbutton" onclick="somefunc($('#Askemail'),$('#Askname'))">Submit</button>
+        </form>
+    </div>
+
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">First</a></li>
+            <li><a href="#tabs-2">Second</a></li>
+            <li><a href="#tabs-3">Third</a></li>
+        </ul>
+        <div id="tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+        <div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+    </div>
+</div>
 </body>
 </html>
