@@ -15,11 +15,14 @@
     <link rel="stylesheet" href="jquery.bxslider.css"/>
 
     <script>
+        x=0;
+        c=0;
+        v=0;
         function somefunc(a,b,c){
             requiredname(b);
             checkEmail(a);
             vrequiredtepass(c);
-            
+
         }
         function vrequiredtepass(a){
             var pass=a.val().length;
@@ -28,9 +31,11 @@
                 $('.incorectpass').show();
                 $('.validatepass').click(function(){
                     $('.incorectpass').hide();
-                });            }
+
+                });      v=0;       }
             else{
                 a.css('border','1px solid green');
+                v=1;
             }
         }
         function requiredname(a){
@@ -43,9 +48,11 @@
                 $('.required-entry').click(function(){
                     $('.incorectname').hide();
                 });
+                x=1;
             }
             else{
                 a.css('border','1px solid green');
+                x=1;
             }
         }
         function checkEmail(a) {
@@ -59,10 +66,12 @@
                 $('.validate-email').click(function(){
                     $('.incorectemail').hide();
                 });
-                return false;
+
+                c=0;
             }
             else{
                 a.css('border','1px solid green');
+                c=1;
             }
         }
 
@@ -471,9 +480,23 @@
         </div>
         <div class="leftslider">
             <ul class="bxslider1">
-                <li><img src="images/Animals_Cats__001795_1.jpg" /></li>
-                <li><img src="images/kartinki-domashnih-jivotnyih4.jpg" /></li>
-                <li><img src="images/skzh-44-03.jpg" /></li>
+                <li><p class="titlesl">Whats Hot</p>
+                <ul class="ulli">
+                    <li><div class="mig"></div><p class="text">A New York </p><br/><br/><br/> <p class="timeago">25min</p></li>
+                    <li><div class="mig"></div><p class="text">A New York </p><br/><br/><br/> <p class="timeago">25min</p></li>
+                    <li><div class="mig"></div><p class="text">A New York </p><br/><br/><br/> <p class="timeago">25min</p></li>
+                    <li><div class="mig"></div><p class="text">A New York </p><br/><br/><br/> <p class="timeago">25min</p></li>
+
+                </ul></li>
+                <li><p class="titlesl">Whats Hot</p>
+                    <ul class="ulli">
+                        <li><div class="mig"></div><p class="text">A New York1 </p><br/><br/><br/> <p class="timeago">25min</p></li>
+                        <li><div class="mig"></div><p class="text">A New York 1</p><br/><br/><br/> <p class="timeago">25min</p></li>
+                        <li><div class="mig"></div><p class="text">A New York1 </p><br/><br/><br/> <p class="timeago">25min</p></li>
+                        <li><div class="mig"></div><p class="text">A New York1 </p><br/><br/><br/> <p class="timeago">25min</p></li>
+
+                    </ul></li>
+
             </ul>
         </div>
         <div class="poem"><blockquote>"Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сам всё дадут! "</blockquote></div>
@@ -484,6 +507,8 @@
             <input type='text' class='required-entry' id="Askname" placeholder="Your name"/>
             <p class="incorectemail" id="emeil3">введіть емейл на зразок (example121@company.dot)</p>
             <input type='text' class='validate-email' id="Askemail" placeholder="Your email"/>
+            
+            <textarea name="" id="area1" cols="30" rows="10"></textarea>
             <button type="button" id="Askbutton" onclick="somefunc($('#Askemail'),$('#Askname'))">Submit</button>
         </form>
     </div>
